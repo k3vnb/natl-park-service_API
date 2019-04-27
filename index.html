@@ -16,58 +16,64 @@
     <main id="content" role="main" tabindex="-1">
         <form id="js-form">
             <label for="regionStates[]">Select at least one state (required)</label>
-            <fieldset class="fifty-states">
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="AK">Alaska</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="AL">Alabama</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="AR">Arkansas</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="AZ">Arizona</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="CA">California</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="CO">Colorado</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="CT">Connecticut</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="DC">District Of Columbia</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="DE">Delaware</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="FL">Florida</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="GA">Georgia</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="HI">Hawaii</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="IA">Iowa</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="ID">Idaho</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="IL">Illinois</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="IN">Indiana</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="KS">Kansas</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="KY">Kentucky</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="LA">Louisiana</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="MA">Massachusetts</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="MD">Maryland</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="ME">Maine</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="MI">Michigan</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="MN">Minnesota</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="MO">Missouri</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="MS">Mississippi</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="MT">Montana</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="NC">North Carolina</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="ND">North Dakota</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="NE">Nebraska</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="NH">New Hampshire</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="NJ">New Jersey</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="NM">New Mexico</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="NV">Nevada</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="NY">New York</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="OH">Ohio</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="OK">Oklahoma</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="OR">Oregon</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="PA">Pennsylvania</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="RI">Rhode Island</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="SC">South Carolina</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="SD">South Dakota</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="TN">Tennessee</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="TX">Texas</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="UT">Utah</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="VA">Virginia</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="VT">Vermont</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="WA">Washington</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="WI">Wisconsin</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="WV">West Virginia</label></div>
-                <div class="checkbox"><label><input name="regionStates[]" type="checkbox" value="WY">Wyoming</label></div>
+            <fieldset>
+                <div class="fifty-states">
+                <div class="col">
+                    <label><input name="regionStates[]" type="checkbox" value="AK">Alaska</label>
+                    <label><input name="regionStates[]" type="checkbox" value="AL">Alabama</label>
+                    <label><input name="regionStates[]" type="checkbox" value="AR">Arkansas</label>
+                    <label><input name="regionStates[]" type="checkbox" value="AZ">Arizona</label>
+                    <label><input name="regionStates[]" type="checkbox" value="CA">California</label>
+                    <label><input name="regionStates[]" type="checkbox" value="CO">Colorado</label>
+                    <label><input name="regionStates[]" type="checkbox" value="CT">Connecticut</label>
+                    <label><input name="regionStates[]" type="checkbox" value="DC">District Of Columbia</label>
+                    <label><input name="regionStates[]" type="checkbox" value="DE">Delaware</label>
+                    <label><input name="regionStates[]" type="checkbox" value="FL">Florida</label>
+                    <label><input name="regionStates[]" type="checkbox" value="GA">Georgia</label>
+                    <label><input name="regionStates[]" type="checkbox" value="HI">Hawaii</label>
+                    <label><input name="regionStates[]" type="checkbox" value="IA">Iowa</label>
+                    <label><input name="regionStates[]" type="checkbox" value="ID">Idaho</label>
+                    <label><input name="regionStates[]" type="checkbox" value="IL">Illinois</label>
+                    <label><input name="regionStates[]" type="checkbox" value="IN">Indiana</label>
+                    <label><input name="regionStates[]" type="checkbox" value="KS">Kansas</label>
+                    <label><input name="regionStates[]" type="checkbox" value="KY">Kentucky</label>
+                    <label><input name="regionStates[]" type="checkbox" value="LA">Louisiana</label>
+                    <label><input name="regionStates[]" type="checkbox" value="MA">Massachusetts</label>
+                    <label><input name="regionStates[]" type="checkbox" value="MD">Maryland</label>
+                    <label><input name="regionStates[]" type="checkbox" value="ME">Maine</label>
+                    <label><input name="regionStates[]" type="checkbox" value="MI">Michigan</label>
+                    <label><input name="regionStates[]" type="checkbox" value="MN">Minnesota</label>
+                    <label><input name="regionStates[]" type="checkbox" value="MO">Missouri</label>
+                    <label><input name="regionStates[]" type="checkbox" value="MS">Mississippi</label>
+                </div>
+                <div class="col">
+                    <label><input name="regionStates[]" type="checkbox" value="MT">Montana</label>
+                    <label><input name="regionStates[]" type="checkbox" value="NC">North Carolina</label>
+                    <label><input name="regionStates[]" type="checkbox" value="ND">North Dakota</label>
+                    <label><input name="regionStates[]" type="checkbox" value="NE">Nebraska</label>
+                    <label><input name="regionStates[]" type="checkbox" value="NH">New Hampshire</label>
+                    <label><input name="regionStates[]" type="checkbox" value="NJ">New Jersey</label>
+                    <label><input name="regionStates[]" type="checkbox" value="NM">New Mexico</label>
+                    <label><input name="regionStates[]" type="checkbox" value="NV">Nevada</label>
+                    <label><input name="regionStates[]" type="checkbox" value="NY">New York</label>
+                    <label><input name="regionStates[]" type="checkbox" value="OH">Ohio</label>
+                    <label><input name="regionStates[]" type="checkbox" value="OK">Oklahoma</label>
+                    <label><input name="regionStates[]" type="checkbox" value="OR">Oregon</label>
+                    <label><input name="regionStates[]" type="checkbox" value="PA">Pennsylvania</label>
+                    <label><input name="regionStates[]" type="checkbox" value="RI">Rhode Island</label>
+                    <label><input name="regionStates[]" type="checkbox" value="SC">South Carolina</label>
+                    <label><input name="regionStates[]" type="checkbox" value="SD">South Dakota</label>
+                    <label><input name="regionStates[]" type="checkbox" value="TN">Tennessee</label>
+                    <label><input name="regionStates[]" type="checkbox" value="TX">Texas</label>
+                    <label><input name="regionStates[]" type="checkbox" value="UT">Utah</label>
+                    <label><input name="regionStates[]" type="checkbox" value="VA">Virginia</label>
+                    <label><input name="regionStates[]" type="checkbox" value="VT">Vermont</label>
+                    <label><input name="regionStates[]" type="checkbox" value="WA">Washington</label>
+                    <label><input name="regionStates[]" type="checkbox" value="WI">Wisconsin</label>
+                    <label><input name="regionStates[]" type="checkbox" value="WV">West Virginia</label>
+                    <label><input name="regionStates[]" type="checkbox" value="WY">Wyoming</label>
+                </div>
+            </div>
             </fieldset>
 
             <label for="result-count">How many results? (Required)</label>

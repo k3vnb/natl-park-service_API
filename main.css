@@ -22,7 +22,16 @@ form {
     display: flex;
     flex-direction: column;
 }
+.fifty-states {
+    display: flex;
+    justify-content: space-around;
+    padding: 5% 1%;
 
+}
+.col {
+    display: flex;
+    flex-direction: column;
+}
 input[type=submit]{
     background-color: #24b724;
     height: 100px;
