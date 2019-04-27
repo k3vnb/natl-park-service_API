@@ -39,6 +39,29 @@ input[type=submit]:hover {
 
 .results {
     display: none;
+    font-size: 1.2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.results-section-title {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif
+}
+
+.results-li {
+    list-style: none;
+    padding: 5%;
+    border-bottom: 1px solid black;
+    width: 80%;
+}
+
+.park-description {
+    font-weight: 100;
+    font-size: .6em;
+}
+
+.park-url {
+    font-size: .8em;
 }
 
 /* footer */

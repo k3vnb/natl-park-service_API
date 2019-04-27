@@ -1,19 +1,45 @@
 
-const apiKey = 'fbmBCVWzt2Q78aBWZQJIZu1qG7g3fnsENWvhPtrd';
+
 // https://developer.nps.gov/api/v1/parks?stateCode=HI&stateCode=NJ&limit=10&api_key=fbmBCVWzt2Q78aBWZQJIZu1qG7g3fnsENWvhPtrd" -H "accept: application/json
 
 function handleError(err){
-    console.log(err);
+    $('.results').append(err.message).show();
 }
 
-function render(responseJson){
-    console.log('render')    
+function renderResults(responseJson){
+    responseJson.data.forEach(item => {
+        $('.results-ul').append(`
+            <li class="results-li">
+                <h2 class="park-title">${item.name} - ${item.states}<h2>
+                <p class="park-description">${item.description}</p>
+                <a class="park-url" href=${item.url} alt="${item.name}'s website">${item.url}</a>
+            </li>
+        `);
+    })
+    $('.results').show();
  }
 
+function resetResultsField() {
+    $('.results').hide();
+    $('.results-ul').empty();
+  }
 
-function handleAPICall(selectedStates){ 
-    console.log(selectedStates)  
-    fetch(``)
+function formatSelectedStates(selectedStates){
+    stateStr = ''
+    selectedStates.forEach(selectedState => {
+        stateStr+= 'stateCode='+selectedState +'&'
+    })
+    return stateStr;
+}
+
+function handleAPICall(selectedStates, amount){ 
+    const baseURL = 'https://developer.nps.gov/api/v1/parks?';
+    const params = {
+        api_key: 'fbmBCVWzt2Q78aBWZQJIZu1qG7g3fnsENWvhPtrd',
+        limit: amount,
+        getStates: formatSelectedStates(selectedStates)
+    }
+    fetch(`${baseURL}${params.getStates}limit=${params.limit}&api_key=${params.api_key}`)
     .then(response =>   {
         console.log(response)
         if (response.ok) {
@@ -23,38 +49,37 @@ function handleAPICall(selectedStates){
         }
       })
       .then(responseJson => {
-          render(responseJson)
+          renderResults(responseJson)
         })
       .catch(error => {
           handleError(error);
     })
 }
 
-function resetResultsField() {
-    $('.results').hide();
-    $('.results-ul').empty();
-  }
-function resetSearchField() {
-    $('input[name="state"]').val('AL');
+
+function resetInputFields() {
+    $('input[type=checkbox]').prop('checked',false);
+    $('input[type=number]').val(10);
   }
 
-function getCheckedItems(){
-    //creates a string of selected states in proper format for API params
-    let stateString = '';
+function getCheckedItemsAndLimit(amount){
+    if (typeof(amount) === undefined){
+        amount = 9;
+    }
+    let stateArr = [];
 
     $.each($("input[type='checkbox']:checked"), function(){            
-        stateString+=($(this).val()) + ',';
+        stateArr.push($(this).val());
     });
-    if (validateCheckBoxForm(stateString)) {
-        const checkedItems = stateString.substring(0, stateString.length - 1);
-        handleAPICall(checkedItems);
+    if (validateCheckBoxForm(stateArr)) {
+        handleAPICall(stateArr, amount);
     } else {
         alert('You must select at least one state');
     }
 }
 
-function validateCheckBoxForm(stateString){
-    const isChecked = stateString.length;
+function validateCheckBoxForm(stateArr){
+    const isChecked = stateArr.length;
     if(!isChecked) {
       return false;
     } else {
@@ -66,8 +91,9 @@ function onFormSubmit(){
     $('form').submit(() => {
         event.preventDefault();
         resetResultsField();
-        getCheckedItems();
-        resetSearchField();
+        let amount = $('input[type="number"]').val() - 1;
+        getCheckedItemsAndLimit(amount);
+        resetInputFields();
     })
 }
 
